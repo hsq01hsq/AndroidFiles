@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">音乐播放器</string>
+    <string name="btnLast">上一首</string>
+    <string name="btnPlay">播放</string>
+    <string name="btnPause">暂停</string>
+    <string name="btnNext">下一首</string>
+</resources>
