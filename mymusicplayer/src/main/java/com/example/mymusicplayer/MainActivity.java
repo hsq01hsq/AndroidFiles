@@ -10,7 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private MusicService musicService;
     private Button btnLast, btnPlay, btnPause, btnNext;
 
@@ -42,19 +42,33 @@ public class MainActivity extends AppCompatActivity {
         btnPlay = findViewById(R.id.btn_play);
     }
 
-    private void myListener() {
-        btnPlay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+//    private void myListener() {
+//        btnPlay.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                musicService.mediaPlayer.start();
+//            }
+//        });
+//        btnPause.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                musicService.mediaPlayer.pause();
+//            }
+//        });
+//    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.btn_play:
                 musicService.mediaPlayer.start();
-            }
-        });
-        btnPause.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+                break;
+            case R.id.btn_pause:
                 musicService.mediaPlayer.pause();
-            }
-        });
+                break;
+            default:
+                break;
+        }
     }
 
     @Override
